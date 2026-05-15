@@ -18,9 +18,9 @@ Three model families are considered:
 
 | Model | Description | Parameters |
 |---|---|---|
-| **ΛCDM** | Cosmological constant baseline | \(\Omega_m, H_0\) |
-| **CPL** | Chevallier–Polarski–Linder evolving equation of state | \(\Omega_m, H_0, w_0, w_a\) |
-| **Ξosc** | Exploratory oscillating dark-energy parameterisation | \(\Omega_m, H_0, \epsilon, \omega_{\mathrm{osc}}\) |
+| **ΛCDM** | Cosmological constant baseline | $\Omega_m, H_0$ |
+| **CPL** | Chevallier–Polarski–Linder evolving equation of state | $\Omega_m, H_0, w_0, w_a$ |
+| **Ξosc** | Exploratory oscillating dark-energy parameterisation | $\Omega_m, H_0, \epsilon, \omega_{\mathrm{osc}}$ |
 
 ## Scientific Motivation
 
@@ -32,7 +32,7 @@ The oscillating dark-energy model is treated as a deliberately exploratory exten
 
 The inference workflow uses `emcee`, an affine-invariant ensemble MCMC sampler, to explore posterior distributions over cosmological parameters. The likelihood combines:
 
-- **Type Ia supernovae:** distance modulus \(\mu(z)\), computed from the luminosity distance \(d_L(z)\), using the Pantheon+SH0ES covariance matrix;
+- **Type Ia supernovae:** distance modulus $\mu(z)$, computed from the luminosity distance $d_L(z)$, using the Pantheon+SH0ES covariance matrix;
 - **BAO measurements:** distance-ratio observables compared against DESI DR2 BAO constraints;
 - **Model comparison:** AIC and BIC are used as first-order criteria to penalise additional model complexity.
 
@@ -54,13 +54,13 @@ The project is therefore best understood as a reproducible computational-cosmolo
 
 The `v0.1.0-exploratory` release explicitly documents several limitations that must be addressed in future versions:
 
-1. **Fixed reference cosmology for \(t(z)\) mapping**  
+1. **Fixed reference cosmology for $t(z)$ mapping**  
    The oscillating model currently uses a reference mapping that can introduce a self-consistency bias.
 
-2. **Boundary prior on \(\epsilon\)**  
+2. **Boundary prior on $\epsilon$**  
    The preference for non-zero oscillation amplitude is statistically fragile because of one-sided prior truncation.
 
-3. **Fixed sound horizon \(r_d\)**  
+3. **Fixed sound horizon $r_d$**  
    The current treatment implicitly imports external information and does not yet provide a fully self-consistent BAO analysis.
 
 These limitations are intentionally documented because they are part of the scientific value of the project: the pipeline is designed to expose where an exploratory model becomes statistically or physically fragile.
