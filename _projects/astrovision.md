@@ -2,7 +2,7 @@
 layout: page
 title: AstroVision
 description: Deep-learning pipeline for galaxy morphological classification with multi-modal fusion and uncertainty quantification
-# img: assets/img/projects/astrovision_preview.png
+img: assets/img/projects/astrovision_preview.png
 importance: 2
 category: work
 related_publications: false
