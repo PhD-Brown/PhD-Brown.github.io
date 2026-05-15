@@ -7,7 +7,8 @@
   abstract     = {This work develops an interpretable machine-learning pipeline for stellar spectral classification using physics-based spectroscopic descriptors extracted from LAMOST DR5 spectra cross-matched with Gaia DR3. The pipeline combines feature engineering, supervised classification, dimensionality reduction, and SHAP-based interpretability to study which spectral features drive model decisions. Current results suggest that metallicity-sensitive indicators, including Ca II H&K and Mg b, play a major role in the learned classification structure, alongside classical temperature-sensitive Balmer features.},
   code         = {https://github.com/PhD-Brown/AstroSpectro},
   website      = {https://phd-brown.github.io/AstroSpectro/},
-  selected     = {true}
+  selected     = {true},
+  preview      = {astrospectro_preview.png}
 }
 
 @unpublished{baker2026phy3500,
@@ -18,5 +19,31 @@
   note         = {Course report and symposium contribution, PHY-3500, Université Laval, Winter 2026. Supervised by Prof. Antoine Allard.},
   abstract     = {Course research project presented in the context of PHY-3500 at Université Laval. The project applies dimensionality-reduction methods and interpretability tools to LAMOST DR5 stellar spectra in order to compare PCA, UMAP, t-SNE, and autoencoder-based representations of astrophysical feature space. The work builds on the AstroSpectro pipeline and focuses on the physical interpretation of low-dimensional spectral structure.},
   code         = {https://github.com/PhD-Brown/AstroSpectro},
-  selected     = {false}
+  selected     = {true},
+  preview      = {astrospectro_preview.png}
+}
+
+@misc{baker2025xidarkenergy,
+  title        = {{\(\xi\)} Dark Energy · {BAO} {MCMC}: Exploratory Bayesian Inference for Dark-Energy Models},
+  author       = {Baker, Alex},
+  year         = {2025},
+  abbr         = {Software},
+  note         = {Exploratory research-software release, v0.1.0},
+  abstract     = {This project implements a reproducible Bayesian MCMC workflow for comparing ΛCDM, CPL, and exploratory oscillating dark-energy models using Pantheon+SH0ES supernovae and DESI DR2 BAO measurements. The release focuses on transparency, posterior diagnostics, model comparison, and explicit documentation of current limitations rather than claiming evidence for new physics.},
+  code         = {https://github.com/PhD-Brown/xi-dark-energy-bao-mcmc},
+  website      = {https://github.com/PhD-Brown/xi-dark-energy-bao-mcmc/releases/tag/v0.1.0},
+  selected     = {false},
+  preview      = {xi_bao_preview.png}
+}
+
+@unpublished{baker2026astrovision,
+  title        = {Deep Visual Representations for Galaxy Morphological Classification},
+  author       = {Baker, Alex},
+  year         = {2026},
+  abbr         = {Draft},
+  note         = {Project manuscript draft in preparation},
+  abstract     = {This project explores deep-learning methods for galaxy morphological classification using Galaxy10 DECaLS, DINOv2 visual features, non-parametric morphometrics, photometric information, and uncertainty-aware classification. The work investigates whether self-supervised visual representations encode physically meaningful galaxy structure beyond class labels alone.},
+  code         = {https://github.com/PhD-Brown/AstroVision},
+  selected     = {false},
+  preview      = {astrovision_preview.png}
 }
