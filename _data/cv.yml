@@ -18,64 +18,28 @@
       year: 2023–now
       description:
         - Specialisation in computational astrophysics and machine learning.
-        - Relevant courses — quantum mechanics, statistical mechanics, electromagnetism,
-          numerical methods, data analysis (PHY-3500).
-        - >
-          <b>PHY-3500 course article</b> — interpretable ML for stellar spectral
-          classification using LAMOST DR5 and Gaia DR3 data; presented at the
-          departmental symposium at Musée de la Civilisation de Québec (Winter 2026).
-          Supervised by Prof. Antoine Allard.
+        - "PHY-3500 course article — interpretable ML for stellar spectral classification (LAMOST DR5 × Gaia DR3). Presented at departmental symposium, Musée de la Civilisation de Québec, Winter 2026. Supervised by Prof. Antoine Allard."
 
 - title: Research Projects
   type: time_table
   contents:
-    - title: >
-        <a href="https://github.com/PhD-Brown/AstroSpectro">AstroSpectro</a>
-        — Interpretable ML Pipeline for Stellar Spectroscopy
+    - title: AstroSpectro — Interpretable ML Pipeline for Stellar Spectroscopy
       year: 2025–now
       description:
-        - >
-          End-to-end pipeline for stellar spectral classification on 43,000 LAMOST DR5
-          spectra cross-matched with Gaia DR3, combining physics-based feature
-          extraction (183 spectroscopic descriptors), supervised classification
-          (XGBoost, ROC-AUC 0.964, 87% balanced accuracy), dimensionality reduction
-          (PCA, UMAP, autoencoder), and SHAP interpretability.
-        - >
-          Key scientific finding — SHAP analysis reveals that metallicity-sensitive
-          features (Ca II H&K, Mg b) systematically outrank temperature-proxy features
-          (Balmer series) in the learned classification structure.
-          Manuscript in preparation for <i>Research Notes of the AAS</i> (RNAAS).
-        - >
-          Full documentation at
-          <a href="https://phd-brown.github.io/AstroSpectro/">phd-brown.github.io/AstroSpectro</a>.
-          85+ experiment runs tracked with Weights & Biases.
+        - "End-to-end pipeline for stellar spectral classification on 43,000 LAMOST DR5 spectra cross-matched with Gaia DR3. XGBoost classifier with 183 physics-based descriptors, ROC-AUC 0.964, 87% balanced accuracy."
+        - "Key finding — SHAP analysis reveals metallicity-sensitive features (Ca II H&K, Mg b) systematically outrank temperature-proxy features (Balmer series). Manuscript in preparation for Research Notes of the AAS (RNAAS)."
+        - "Full documentation at phd-brown.github.io/AstroSpectro. 85+ experiment runs tracked with Weights & Biases."
 
-    - title: >
-        <a href="https://github.com/PhD-Brown/AstroVision">AstroVision</a>
-        — Deep Learning for Galaxy Morphological Classification
+    - title: AstroVision — Deep Learning for Galaxy Morphological Classification
       year: 2025–now
       description:
-        - >
-          Late-fusion multimodal classifier combining DINOv2 visual features,
-          non-parametric morphometrics (CAS, Gini, M20), and SDSS photometry
-          on the Galaxy10 DECaLS dataset (17,736 RGB images, 10 morphology classes).
-        - >
-          Achieved 86.3% balanced accuracy. Includes MC Dropout uncertainty
-          quantification, conformal prediction, and attention-guided morphometry.
-          Full A&A-format paper produced.
+        - "Late-fusion multimodal classifier combining DINOv2 visual features, non-parametric morphometrics (CAS, Gini, M20), and SDSS photometry on Galaxy10 DECaLS (17,736 images, 10 classes)."
+        - "86.3% balanced accuracy. Includes MC Dropout uncertainty quantification, conformal prediction, and attention-guided morphometry."
 
-    - title: >
-        <a href="https://github.com/PhD-Brown/xi-dark-energy-bao-mcmc">ξ Dark Energy · BAO MCMC</a>
-        — Bayesian Cosmological Inference
+    - title: Xi Dark Energy — Bayesian Cosmological Inference
       year: 2025–now
       description:
-        - >
-          Bayesian MCMC analysis comparing ΛCDM, CPL, and oscillating dark energy
-          (Ξosc) parameterisations using Pantheon+SH0ES supernovae and DESI DR2
-          BAO data. Implemented with <code>emcee</code>; AIC/BIC model comparison.
-        - >
-          Exploratory release (v0.1.0) with fully documented limitations
-          and reproducible inference pipeline.
+        - "Bayesian MCMC analysis comparing ΛCDM, CPL, and oscillating dark energy using Pantheon+SH0ES supernovae and DESI DR2 BAO data. Implemented with emcee."
 
 - title: Innovation & Intellectual Property
   type: time_table
@@ -83,56 +47,39 @@
     - title: Co-Inventor — MOSS System (Provisional Patent)
       year: 2025–now
       description:
-        - >
-          Co-inventor of the Modular Orchestrated Storage System (MOSS),
-          a persistent memory architecture for large language models.
-          US Provisional Patent Application No. 63/882,562.
-        - >
-          Designed the orchestration API and developed Python prototypes.
-          Active valorisation process with Axelys and the Bureau de liaison
-          université-milieu (BLUM) at Université Laval.
+        - "Co-inventor of the Modular Orchestrated Storage System (MOSS), a persistent memory architecture for large language models. US Provisional Patent Application No. 63/882,562."
+        - "Designed the orchestration API and developed Python prototypes. Active valorisation with Axelys and BLUM, Université Laval."
 
 - title: Teaching Experience
   type: time_table
   contents:
     - title: Teaching Assistant — Classical Mechanics (PHY-1005)
-      institution: Département de physique, de génie physique et d'optique, Université Laval
+      institution: Université Laval
       year: Winter 2025
       description:
         - Academic support for undergraduate students in mechanics and special relativity.
-        - Explanation of complex physical concepts and problem correction.
+        - Explanation of complex physical concepts and mathematical problem correction.
 
 - title: Technical Skills
   type: nested_list
   contents:
     - title: Programming & Scientific Computing
       items:
-        - Python (advanced) — NumPy, SciPy, Astropy, Matplotlib, Plotly
+        - "Python (advanced) — NumPy, SciPy, Astropy, Matplotlib, Plotly"
         - LaTeX, Markdown, Bash/Linux
-    - title: Machine Learning & Data Science
+    - title: Machine Learning
       items:
-        - XGBoost, scikit-learn, PyTorch
-        - UMAP, HDBSCAN, PCA, autoencoders
-        - SHAP interpretability, Weights & Biases (85+ runs)
-        - DINOv2, EfficientNet, MC Dropout, conformal prediction
+        - "XGBoost, scikit-learn, PyTorch, UMAP, HDBSCAN"
+        - "SHAP interpretability, Weights & Biases (85+ runs)"
+        - "DINOv2, EfficientNet, MC Dropout, conformal prediction"
     - title: Astronomy & Data
       items:
-        - FITS ingestion and spectral preprocessing (LAMOST DR5, Gaia DR3)
-        - CDS XMatch, VizieR, Pantheon+SH0ES, DESI DR2 BAO
-        - Bayesian MCMC inference (emcee)
-    - title: Development Tools
+        - "FITS processing — LAMOST DR5, Gaia DR3, Pantheon+SH0ES, DESI DR2 BAO"
+        - "CDS XMatch, VizieR, Bayesian MCMC inference (emcee)"
+    - title: Tools
       items:
-        - Git, GitHub, GitHub Pages, Docusaurus
-        - Jupyter, VS Code, GitHub Copilot
-        - joblib parallelisation, Windows 11 + CUDA 12.8 (RTX 5060 Ti)
-
-- title: Languages
-  type: map
-  contents:
-    - name: French
-      value: Native
-    - name: English
-      value: Fluent (scientific writing and communication)
+        - "Git, GitHub, GitHub Pages, Docusaurus, Jupyter, VS Code"
+        - "joblib parallelisation, CUDA 12.8 (RTX 5060 Ti 16GB)"
 
 - title: Interests
   type: list
