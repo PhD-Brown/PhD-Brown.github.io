@@ -10,49 +10,68 @@ related_publications: false
 
 ## Overview
 
-**ξ Dark Energy · BAO MCMC** is an independent exploratory project in computational cosmology, applying Bayesian Markov Chain Monte Carlo (MCMC) inference to constrain dark energy model parameters using two independent datasets: the [Pantheon+SH0ES](https://pantheonplussh0es.github.io/) Type Ia supernova compilation and the [DESI DR2](https://www.desi.lbl.gov/) Baryon Acoustic Oscillation (BAO) measurements.
+**ξ Dark Energy · BAO MCMC** is an independent exploratory project in computational cosmology. The project implements a Bayesian Markov Chain Monte Carlo workflow to compare several dark-energy parameterisations using Type Ia supernovae and baryon acoustic oscillation data.
 
-Three dark energy models are compared:
+The analysis combines the [Pantheon+SH0ES](https://pantheonplussh0es.github.io/) supernova compilation with [DESI DR2](https://www.desi.lbl.gov/) BAO measurements. The goal is not to claim evidence for new physics, but to build a transparent and reproducible inference pipeline for testing how different dark-energy models behave under current observational constraints.
+
+Three model families are considered:
 
 | Model | Description | Parameters |
 |---|---|---|
-| **ΛCDM** | Cosmological constant | Ω_m, H₀ |
-| **CPL** | Chevallier-Polarski-Linder | Ω_m, H₀, w₀, wₐ |
-| **Ξosc** | Oscillating dark energy | Ω_m, H₀, ε, ω_osc |
+| **ΛCDM** | Cosmological constant baseline | \(\Omega_m, H_0\) |
+| **CPL** | Chevallier–Polarski–Linder evolving equation of state | \(\Omega_m, H_0, w_0, w_a\) |
+| **Ξosc** | Exploratory oscillating dark-energy parameterisation | \(\Omega_m, H_0, \epsilon, \omega_{\mathrm{osc}}\) |
+
+## Scientific Motivation
+
+The standard ΛCDM model remains highly successful, but current cosmology is increasingly shaped by precision tensions, model comparison, and the need for transparent statistical workflows. This project explores how alternative dark-energy parameterisations behave when fitted to combined supernova and BAO distance measurements.
+
+The oscillating dark-energy model is treated as a deliberately exploratory extension. The goal is to test the inference pipeline, inspect posterior structure, and identify which modelling assumptions matter most before making stronger physical claims.
 
 ## Methodology
 
-The analysis uses `emcee` (affine-invariant ensemble MCMC sampler) to explore the posterior distributions of cosmological parameters. The likelihood function combines:
+The inference workflow uses `emcee`, an affine-invariant ensemble MCMC sampler, to explore posterior distributions over cosmological parameters. The likelihood combines:
 
-- **Type Ia supernovae:** distance modulus μ(z) computed from the luminosity distance d_L(z), with Pantheon+SH0ES covariance matrix
-- **BAO:** ratio d_V(z)/r_d compared to DESI DR2 measurements at 7 effective redshifts
+- **Type Ia supernovae:** distance modulus \(\mu(z)\), computed from the luminosity distance \(d_L(z)\), using the Pantheon+SH0ES covariance matrix;
+- **BAO measurements:** distance-ratio observables compared against DESI DR2 BAO constraints;
+- **Model comparison:** AIC and BIC are used as first-order criteria to penalise additional model complexity.
 
-Model comparison uses the Akaike Information Criterion (AIC) and Bayesian Information Criterion (BIC) to penalize model complexity.
+The project includes diagnostic plots, posterior summaries, corner plots, reproducibility scripts, and explicit documentation of known limitations.
+
+## Current Results
+
+The current exploratory release suggests that:
+
+- ΛCDM and CPL remain consistent with the combined distance data;
+- the oscillating model can produce a marginal preference for a non-zero oscillation amplitude, but this is not sufficient to claim detection;
+- posterior asymmetries make median-based summaries more robust than relying only on means;
+- the apparent preference for the oscillating component is sensitive to modelling assumptions and prior boundaries;
+- a more self-consistent treatment is required before the model can be interpreted physically.
+
+The project is therefore best understood as a reproducible computational-cosmology experiment rather than a finished cosmological result.
 
 ## Known Limitations
 
-This project is released as `v0.1.0-exploratory` with explicit documentation of its technical limitations:
+The `v0.1.0-exploratory` release explicitly documents several limitations that must be addressed in future versions:
 
-1. **Fixed reference cosmology for t(z) mapping** — introduces a self-consistency bias in the oscillating dark energy model
-2. **Boundary prior on ε** — the ~2.26σ preference for non-zero oscillation amplitude is statistically fragile due to one-sided prior truncation
-3. **Fixed sound horizon r_d** — implicitly imports a CMB constraint, breaking full BAO self-consistency
+1. **Fixed reference cosmology for \(t(z)\) mapping**  
+   The oscillating model currently uses a reference mapping that can introduce a self-consistency bias.
 
-These limitations are documented in the repository and will be addressed in v0.2.
+2. **Boundary prior on \(\epsilon\)**  
+   The preference for non-zero oscillation amplitude is statistically fragile because of one-sided prior truncation.
 
-## Results
+3. **Fixed sound horizon \(r_d\)**  
+   The current treatment implicitly imports external information and does not yet provide a fully self-consistent BAO analysis.
 
-- ΛCDM and CPL remain consistent with current data
-- Ξosc shows a marginal (~2.26σ) preference for non-zero oscillation amplitude — insufficient to claim detection given the prior boundary effects
-- Posterior distributions are well-sampled (convergence confirmed via Gelman-Rubin diagnostic)
-- Median preferred over mean for skewed posterior distributions
+These limitations are intentionally documented because they are part of the scientific value of the project: the pipeline is designed to expose where an exploratory model becomes statistically or physically fragile.
 
 ## Technical Stack
 
-Python · emcee · NumPy · SciPy · Matplotlib · corner · Astropy
+Python · emcee · NumPy · SciPy · Astropy · Matplotlib · corner
 
 ## Links
 
 - 📁 [GitHub Repository](https://github.com/PhD-Brown/xi-dark-energy-bao-mcmc)
 - 🏷️ [Release v0.1.0-exploratory](https://github.com/PhD-Brown/xi-dark-energy-bao-mcmc/releases/tag/v0.1.0)
 
-*This is an independent exploratory project. A v0.2 correcting the self-consistency bias and prior issues is planned.*
+*Status: exploratory computational cosmology project. A future version will focus on improving model self-consistency, prior treatment, BAO modelling, and convergence diagnostics.*

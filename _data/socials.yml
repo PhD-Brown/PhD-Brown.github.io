@@ -8,10 +8,10 @@ cv_pdf: /assets/pdf/example_pdf.pdf # path to your CV PDF file
 #   url: https://www.alberteinstein.com/
 email: alex.baker.1@ulaval.ca # your email address
 github_username: PhD-Brown
-inspirehep_id: 1010907 # Inspire HEP author ID
+# inspirehep_id: 1010907 # Inspire HEP author ID
 linkedin_username: alex-baker-5087ba1b6
 orcid_id: 0009-0007-3242-1829
-rss_icon: false # comment this line to hide the RSS icon
+# rss_icon: false # comment this line to hide the RSS icon
 # scholar_userid: qc6CJjYAAAAJ # your Google Scholar ID
 # wechat_qr: # filename of your wechat qr-code saved as an image (e.g., wechat-qr.png if saved to assets/img/wechat-qr.png)
 # whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)

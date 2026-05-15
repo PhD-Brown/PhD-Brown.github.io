@@ -10,9 +10,11 @@ related_publications: false
 
 ## Overview
 
-**AstroSpectro** is an open-source machine learning pipeline for automated stellar spectral classification, built on 43,019 spectra from the [LAMOST DR5](http://www.lamost.org/) survey cross-matched with [Gaia DR3](https://www.cosmos.esa.int/web/gaia/dr3) astrometric and photometric data.
+**AstroSpectro** is an open-source research project at the intersection of stellar spectroscopy, machine learning, and astronomical survey analysis. The project focuses on building physically grounded and interpretable pipelines for analysing large collections of stellar spectra, using data from [LAMOST DR5](http://www.lamost.org/) cross-matched with [Gaia DR3](https://www.cosmos.esa.int/web/gaia/dr3).
 
-The pipeline covers the full research workflow: data acquisition from raw FITS files, preprocessing and continuum normalization, physics-based feature engineering (183 spectroscopic descriptors), supervised classification, dimensionality reduction, clustering, and SHAP-based interpretability analysis.
+The current pipeline works on a cleaned dataset of more than 43,000 spectra and combines raw FITS ingestion, preprocessing, continuum normalisation, physics-based feature extraction, supervised classification, dimensionality reduction, clustering, and SHAP-based interpretability. Rather than treating classification accuracy as the final objective, AstroSpectro is designed to ask a broader scientific question:
+
+> What physical information is actually being learned from stellar spectra by modern machine-learning models?
 
 <div class="row">
   <div class="col-sm mt-3 mt-md-0">
@@ -22,45 +24,51 @@ The pipeline covers the full research workflow: data acquisition from raw FITS f
     {% include figure.liquid loading="eager" path="assets/img/projects/astrospectro_shap.png" title="SHAP feature importance" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
+
 <div class="caption">
-  Left: UMAP projection of 43,019 stellar spectra coloured by spectral class, showing clear morphological separation between stellar populations. Right: SHAP analysis revealing that metallicity-sensitive features (Ca II H&K, Mg b) systematically outrank Balmer temperature proxies as classification discriminants.
+  Left: UMAP projection of the stellar spectral feature space, showing structured separation between stellar populations. Right: SHAP interpretability analysis highlighting the relative importance of metallicity-sensitive and temperature-sensitive spectral features.
 </div>
 
-## Scientific Finding
+## Scientific Motivation
 
-A central result validated via SHAP analysis challenges a classical assumption in stellar classification: **metallicity-sensitive spectral features (Ca II H&K at 3933/3968 Å, Mg b at 5167–5183 Å) consistently rank above Balmer temperature proxies (Hα, Hβ, Hγ, Hδ) as discriminants of MK spectral class**.
+Classical stellar classification is historically built around the visual strength of spectral lines, especially the Balmer sequence as a temperature indicator. In large survey datasets, however, machine-learning models may learn a more complex combination of temperature, metallicity, surface gravity, evolutionary state, and survey selection effects.
 
-This finding implies that stellar classification models trained on large heterogeneous surveys are primarily encoding metallicity and evolutionary state rather than photospheric temperature alone — a result with implications for the interpretation of ML-based classifiers applied to spectroscopic surveys such as LAMOST, SDSS, and the forthcoming 4MOST.
+AstroSpectro explores this question by extracting physically motivated spectroscopic descriptors and testing which features actually drive classification decisions. A central result of the current pipeline is that metallicity-sensitive features, including Ca II H&K and Mg b, often rank above Balmer-line temperature proxies in SHAP-based feature importance analyses.
 
-## Architecture
+This does not replace the classical MK framework. Instead, it suggests that data-driven classifiers trained on large heterogeneous surveys may encode stellar population structure in ways that are not reducible to temperature alone.
 
-| Component | Method | Result |
-|---|---|---|
-| Feature extraction | 183 physics-based spectroscopic descriptors | `spectro_only=True` mode |
-| Classifier | XGBoost (gradient boosting) | 87% balanced accuracy |
-| ROC-AUC | Multi-class one-vs-rest | 0.964 |
-| Dimensionality reduction | PCA, UMAP, Autoencoder | Trustworthiness > 0.95 |
-| Clustering | HDBSCAN (20 clusters) | Physically interpretable |
-| Interpretability | SHAP (TreeExplainer) | 97.9% physical features in top-30 |
+## Pipeline
 
-## Key Results
+| Stage | Description |
+|---|---|
+| Data acquisition | Robust download and management of LAMOST DR5 FITS spectra |
+| Catalogue construction | FITS-header metadata extraction and Gaia DR3 cross-matching |
+| Preprocessing | Wavelength reconstruction, flux normalisation, inverse-variance cleaning |
+| Feature engineering | Physics-based spectroscopic descriptors: Balmer lines, metallic lines, molecular bands, continuum indices, line profiles |
+| Supervised learning | XGBoost and related classifiers for stellar spectral classification |
+| Dimensionality reduction | PCA, UMAP, t-SNE, and autoencoder-based latent-space exploration |
+| Interpretability | SHAP analysis to connect model decisions back to physical spectral features |
 
-- **87% balanced accuracy** on a 7-class stellar classification problem (OBAFGKM + QSO + Galaxy)
-- **ROC-AUC = 0.964** (multi-class, macro-averaged)
-- Removing non-physical metadata features (RA, Dec, redshift, instrument) *increased* performance — validating the physically grounded feature design
-- F/G class confusion is physically irreducible (continuous stellar sequence) — confirmed by UMAP topology
-- HDBSCAN clustering of the latent space recovers astrophysically meaningful stellar sub-populations
+## Current Results
+
+Current experiments show that:
+
+- physically motivated spectral features can recover strong classification performance without relying on instrumental or positional metadata;
+- dimensionality-reduction methods reveal a structured spectral manifold consistent with known stellar-population gradients;
+- SHAP analysis identifies both expected features, such as Balmer lines, and less obvious discriminants, such as metallicity-sensitive Ca and Mg features;
+- removing potentially leaky or non-physical metadata improves the scientific interpretability of the model;
+- F/G/K transitions appear as continuous structures in the learned representation rather than sharply separated categories.
+
+These results support the main goal of the project: developing a workflow where machine learning is not only predictive, but also interpretable in terms of stellar astrophysics.
 
 ## Technical Stack
 
-Python · XGBoost · PyTorch · UMAP · HDBSCAN · SHAP · Astropy · Weights & Biases · Docusaurus
-
-**Compute:** AMD Ryzen 9 5950X · NVIDIA RTX 5060 Ti 16GB · CUDA 12.8 · PyTorch 2.7
+Python · Astropy · NumPy · pandas · scikit-learn · XGBoost · PyTorch · UMAP · HDBSCAN · SHAP · Weights & Biases · Docusaurus
 
 ## Links
 
 - 📁 [GitHub Repository](https://github.com/PhD-Brown/AstroSpectro)
 - 📖 [Full Documentation](https://phd-brown.github.io/AstroSpectro/)
-- 📊 [W&B Experiment Tracking](https://wandb.ai) (85+ runs logged)
+- 📊 Experiment tracking with Weights & Biases
 
-*Target venue: Astronomy & Astrophysics (A&A) or Monthly Notices of the Royal Astronomical Society (MNRAS).*
+*Status: active research and development project. The current focus is on scientific validation, interpretability, dimensionality reduction, and preparation of reproducible research outputs.*
