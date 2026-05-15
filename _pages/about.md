@@ -35,7 +35,7 @@ My path to astrophysics was not a straight line. For several years, I explored d
 
 My current projects include:
 
-- **[AstroSpectro](https://phd-brown.github.io/AstroSpectro/)** — An interpretable machine learning pipeline for stellar spectral analysis using LAMOST DR5 and Gaia DR3 data. The project combines physics-based feature extraction, supervised classification, dimensionality reduction, and SHAP interpretability to study how spectral lines, metallicity-sensitive features, and stellar parameters structure the observed spectral space.
+- **[AstroSpectro](https://github.com/PhD-Brown/AstroSpectro)** — An interpretable machine learning pipeline for stellar spectral analysis using LAMOST DR5 and Gaia DR3 data. The project combines physics-based feature extraction, supervised classification, dimensionality reduction, and SHAP interpretability to study how spectral lines, metallicity-sensitive features, and stellar parameters structure the observed spectral space.
 
 - **[AstroVision](https://github.com/PhD-Brown/AstroVision)** — A deep-learning project for galaxy morphological classification. The pipeline combines visual foundation-model features, non-parametric morphometrics, photometric information, and uncertainty estimation methods to explore galaxy structure in large imaging surveys.
 
