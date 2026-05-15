@@ -2,9 +2,9 @@
 layout: page
 title: AstroSpectro
 description: Interpretable ML pipeline for stellar spectral classification on LAMOST DR5 × Gaia DR3
-img: assets/img/projects/astrospectro_preview.png
+# img: assets/img/projects/astrospectro_preview.png
 importance: 1
-category: astrophysics
+category: work
 related_publications: false
 ---
 

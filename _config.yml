@@ -7,7 +7,8 @@ first_name: Alex
 middle_name: 
 last_name: Baker
 contact_note: >
-  You can even add a little note about which of these is the best way to reach you.
+  The best way to reach me is by email. I am always happy to discuss research, 
+  collaborations, or graduate study opportunities in computational astrophysics.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Computational Astrophysics · Université Laval
 footer_text: >

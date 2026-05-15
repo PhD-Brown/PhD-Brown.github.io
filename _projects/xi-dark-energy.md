@@ -4,7 +4,7 @@ title: ξ Dark Energy · BAO MCMC
 description: Bayesian MCMC analysis comparing dark energy models using Pantheon+SH0ES supernovae and DESI DR2 BAO data
 img: assets/img/projects/xi_bao_preview.png
 importance: 3
-category: cosmology
+category: work
 related_publications: false
 ---
 
