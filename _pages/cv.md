@@ -1,12 +1,12 @@
 ---
 layout: cv
 permalink: /cv/
-title: CV
+title: cv
 nav: true
 nav_order: 5
-cv_pdf: /assets/pdf/example_pdf.pdf # you can also use external links here
-cv_format: rendercv # options: rendercv, jsonresume
-description: This is a description of the page. You can modify it in '_pages/cv.md'. You can also change or remove the top pdf download button.
-toc:
-  sidebar: left
+cv_pdf: # optionnel — lien vers ton PDF si tu en as un
+description: >
+  Undergraduate physics student at Université Laval working at the intersection
+  of computational astrophysics and machine learning. Currently preparing for
+  graduate studies in computational astrophysics.
 ---
