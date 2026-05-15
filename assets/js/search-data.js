@@ -31,8 +31,8 @@ ninja.data = [{
             window.location.href = "/repositories/";
           },
         },{id: "nav-cv",
-          title: "CV",
-          description: "This is a description of the page. You can modify it in &#39;_pages/cv.md&#39;. You can also change or remove the top pdf download button.",
+          title: "cv",
+          description: "Undergraduate physics student at Université Laval working at the intersection of computational astrophysics and machine learning. Currently preparing for graduate studies in computational astrophysics.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
