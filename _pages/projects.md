@@ -2,7 +2,7 @@
 layout: page
 title: projects
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: A curated collection of research and software projects in computational astrophysics, machine learning, and scientific inference.
 nav: true
 nav_order: 3
 display_categories: [work]
