@@ -28,7 +28,7 @@
       description:
         - "End-to-end pipeline for stellar spectral classification on 43,000 LAMOST DR5 spectra cross-matched with Gaia DR3. XGBoost classifier with 183 physics-based descriptors, ROC-AUC 0.964, 87% balanced accuracy."
         - "Key finding — SHAP analysis reveals metallicity-sensitive features (Ca II H&K, Mg b) systematically outrank temperature-proxy features (Balmer series). Manuscript in preparation for Research Notes of the AAS (RNAAS)."
-        - "Full documentation at phd-brown.github.io/AstroSpectro. 85+ experiment runs tracked with Weights & Biases."
+        - "Full documentation at phd-brown.github.io/research-docs. 85+ experiment runs tracked with Weights & Biases."
 
     - title: AstroVision — Deep Learning for Galaxy Morphological Classification
       year: 2025–now
