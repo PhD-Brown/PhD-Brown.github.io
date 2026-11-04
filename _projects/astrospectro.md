@@ -68,7 +68,7 @@ Python · Astropy · NumPy · pandas · scikit-learn · XGBoost · PyTorch · UM
 ## Links
 
 - 📁 [GitHub Repository](https://github.com/PhD-Brown/AstroSpectro)
-- 📖 [Full Documentation](https://phd-brown.github.io/AstroSpectro/)
+- 📖 [Full Documentation](https://phd-brown.github.io/research-docs/docs/astrospectro)
 - 📊 Experiment tracking with Weights & Biases
 
 *Status: active research and development project. The current focus is on scientific validation, interpretability, dimensionality reduction, and preparation of reproducible research outputs.*
